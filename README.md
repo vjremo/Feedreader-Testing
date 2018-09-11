@@ -10,7 +10,7 @@ Feed Reader Testing by Vijay for Udacity's Frontend-nanodegree
 
 ## Overview
 
-This project tests an web-based application that reads RSS feeds using [Jasmine](http://jasmine.github.io/) 
+This project tests an web-based application that reads RSS feeds using [Jasmine](http://jasmine.github.io/)
 
 
 ## What all do we test?
@@ -29,5 +29,5 @@ Open the index.html in browser to launch application. Tests and Results are at b
 
 ## References
 * JavaScript Testing [course](https://www.udacity.com/course/ud549)
-* [Project assets](http://github.com/udacity/frontend-nanodegree-feedreader).
+* [Project assets](http://github.com/udacity/frontend-nanodegree-feedreader)
 * [Jasmine documentation](http://jasmine.github.io)
