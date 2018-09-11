@@ -21,6 +21,7 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
+        //Verifies if allFeeds contains atleast one feed
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
@@ -29,7 +30,8 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-        it('contain valid URL', function() {
+        //Loops through allFeeds, checks if the feed exists and contains URL
+         it('contain valid URL', function() {
             for(let feed of allFeeds){
                 expect(feed.url).toBeDefined();
                 expect(feed.url).not.toBeNull();
@@ -40,6 +42,7 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+        //Loops through allFeeds, checks if the feed exists and is named
         it('have valid name', function() {
             for(let feed of allFeeds){
                 expect(feed.name).toBeDefined();
@@ -49,6 +52,8 @@ $(function() {
     });
 
 
+    /*Refered Link - https://matthewcranford.com/feed-reader-walkthrough-part-3-menu-test-suite/
+    for part of below */
     /* TODO: Write a new test suite named "The menu" */
     describe('The Menu', function() {
         const bodyElement = document.querySelector('body');
@@ -57,6 +62,7 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+        //Check if the menu element is collapsed by default
         it('is hidden by default', function() {
             expect(bodyElement.classList.contains('menu-hidden')).toBeTruthy();
         });
@@ -65,6 +71,7 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+         //Checks if the Menu is displayed upon click and is hidden after another click
          it('can be opened and closed', function () {
              const menuIcon = document.querySelector('.menu-icon-link');
              menuIcon.click();
@@ -82,27 +89,27 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+        //Loads feed prior to test
         beforeEach(function(done){
             loadFeed(0, done);
         });
+        //Verifies if feed element contains at least one element of class 'entry'
         it('contain atleast one feed', function(){
-           const feedContainer = document.querySelector('.feed');
-           expect(feedContainer.children.length).not.toBe(0); 
-
+           const feedContainer = $('.feed');
+           expect(feedContainer.find('article.entry')).not.toBe(0); 
         });
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
         const feed = document.querySelector('.feed');
-        const firstFeed = [];
-        const secondFeed = [];
+        const initialFeed = [];
 
+        //Loads feed twice before test, stores first feed in 'initialFeed' variable
         beforeEach(function(done){
             loadFeed(0);
-            Array.from(feed.children).forEach(function (entry){
-                firstFeed.push(entry.innerText);
-                secondFeed.push(entry.innerHTML);
+            Array.from(feed.children).forEach(function (feedEntry){
+                initialFeed.push(feedEntry.innerHTML);
             });
             loadFeed(1,done);
         });
@@ -111,9 +118,9 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
         it('feed content changes', function(){
-            Array.from(feed.children).forEach(function(entry, index){
-                expect(entry.innerText === firstFeed[index]).toBeFalsy();
-                expect(entry.innerHTML === secondFeed[index]).toBeFalsy();
+            //Loops through feed children elements and verifies if feed's URL varies
+            Array.from(feed.children).forEach(function(feedEntry, feedIndex){
+                expect(feedEntry.innerHTML !== initialFeed[feedIndex]).toBeTruthy();
             });
         });
     });
