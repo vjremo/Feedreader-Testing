@@ -1,12 +1,20 @@
 Feed Reader Testing by Vijay for Udacity's Frontend-nanodegree
 ==============================================================
 
-# Overview
+## Table of Contents
+
+* [Overview](#overview)
+* [What all do we test](#what all do we test?)
+* [Instructions](#instructions)
+* [Demo](#demo)
+* [References](#references)
+
+## Overview
 
 This project tests an web-based application that reads RSS feeds using [Jasmine](http://jasmine.github.io/) 
 
 
-# What all do we test?
+## What all do we test?
 
 According to [Project Rubric](https://review.udacity.com/#!/projects/3442558598/rubric), below tests are conducted on the web-application
 
@@ -15,6 +23,13 @@ According to [Project Rubric](https://review.udacity.com/#!/projects/3442558598/
 3. Check if the menu element is collapsed by default and can be opened/closed upon click
 4. When feed is completely loaded, verify that it has atleast one feed
 5. When a new feed is fetched upon loading, check if the contents loaded differ from previous feed
+
+## Instructions
+Download the application from this [link](https://github.com/vjremo/Feedreader-Testing/releases), extract it to local folder. 
+Open the index.html in browser to launch application. Tests and Results are at bottom of page. 
+
+## Demo
+For a quick look, click on this [Link](https://vjremo.github.io/Feedreader-Testing/) to launch application
 
 ## References
 * JavaScript Testing [course](https://www.udacity.com/course/ud549)
