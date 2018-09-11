@@ -4,9 +4,8 @@ Feed Reader Testing by Vijay for Udacity's Frontend-nanodegree
 ## Table of Contents
 
 * [Overview](#overview)
-* [What all do we test](#what-all-do-we-test?)
+* [What all do we test?](#what-all-do-we-test?)
 * [Instructions](#instructions)
-* [Demo](#demo)
 * [References](#references)
 
 ## Overview
@@ -27,9 +26,6 @@ According to [Project Rubric](https://review.udacity.com/#!/projects/3442558598/
 ## Instructions
 Download the application from this [link](https://github.com/vjremo/Feedreader-Testing/releases), extract it to local folder. 
 Open the index.html in browser to launch application. Tests and Results are at bottom of page. 
-
-## Demo
-For a quick look, click on this [Link](https://vjremo.github.io/Feedreader-Testing/) to launch application
 
 ## References
 * JavaScript Testing [course](https://www.udacity.com/course/ud549)
