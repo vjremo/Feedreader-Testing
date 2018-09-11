@@ -4,7 +4,7 @@ Feed Reader Testing by Vijay for Udacity's Frontend-nanodegree
 ## Table of Contents
 
 * [Overview](#overview)
-* [What all do we test](#what all do we test?)
+* [What all do we test](#what-all-do-we-test?)
 * [Instructions](#instructions)
 * [Demo](#demo)
 * [References](#references)
