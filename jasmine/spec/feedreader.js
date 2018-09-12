@@ -99,28 +99,31 @@ $(function() {
         });
     });
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
+    /* This test ensures when a new feed is loaded
+    * by the loadFeed function that the content actually changes.
+    */
     describe('New Feed Selection', function() {
         const feed = document.querySelector('.feed');
-        const initialFeed = [];
+        let firstFeedHTML  , nextFeedHTML ;
 
-        //Loads feed twice before test, stores first feed in 'initialFeed' variable
+        /* Load the feed twice before test 
+        * using asynchronus function loadFeed() 
+        * store feed's html in respective variables
+        */
         beforeEach(function(done){
-            loadFeed(0);
-            Array.from(feed.children).forEach(function (feedEntry){
-                initialFeed.push(feedEntry.innerHTML);
+            loadFeed(0, function(){
+                firstFeedHTML = feed.innerHTML;
             });
-            loadFeed(1,done);
+
+            loadFeed(1, function(){
+                nextFeedHTML = feed.innerHTML;
+                done();
+            });
         });
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+        
         it('feed content changes', function(){
-            //Loops through feed children elements and verifies if feed's URL varies
-            Array.from(feed.children).forEach(function(feedEntry, feedIndex){
-                expect(feedEntry.innerHTML !== initialFeed[feedIndex]).toBeTruthy();
-            });
+            //Verifies if HTML content of first and second load feed differ
+            expect(nextFeedHTML===firstFeedHTML).toBe(false);
         });
     });
 }());
