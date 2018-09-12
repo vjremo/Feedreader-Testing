@@ -56,7 +56,6 @@ $(function() {
     for part of below */
     /* TODO: Write a new test suite named "The menu" */
     describe('The Menu', function() {
-        const bodyElement = document.querySelector('body');
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
@@ -64,7 +63,7 @@ $(function() {
          */
         //Check if the menu element is collapsed by default
         it('is hidden by default', function() {
-            expect(bodyElement.classList.contains('menu-hidden')).toBeTruthy();
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -75,9 +74,9 @@ $(function() {
          it('can be opened and closed', function () {
              const menuIcon = document.querySelector('.menu-icon-link');
              menuIcon.click();
-             expect(menuIcon.click).toBeTruthy();
+             expect($('body').hasClass('menu-hidden')).toBe(false);
              menuIcon.click();
-             expect(bodyElement.classList.contains('menu-hidden')).toBeTruthy();
+             expect($('body').hasClass('menu-hidden')).toBeTruthy();
          } );
     });
 
