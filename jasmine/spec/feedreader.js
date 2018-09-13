@@ -63,10 +63,11 @@ $(function() {
         beforeEach(function(done){
             loadFeed(0, done);
         });
-        //Verifies if feed element contains at least one element of class 'entry'
+        //Verifies if feed element is not empty and contains at least one element of class 'entry'
         it('contain atleast one feed', function(){
            const feedContainer = $('.feed');
-           expect(feedContainer.find('article.entry')).not.toBe(0); 
+           expect(feedContainer.length).not.toBe(0);
+           expect(feedContainer.find('article.entry').length).not.toBe(0); 
         });
     });
 
